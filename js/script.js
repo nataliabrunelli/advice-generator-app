@@ -3,11 +3,22 @@ const conselho = document.getElementById("conselho");
 const numero = document.getElementById("id");
 
 async function pegarConselho() {
-  const resposta = await fetch("https://api.adviceslip.com/advice");
-  const dados = await resposta.json();
+  try {
+    const resposta = await fetch("https://api.adviceslip.com/advice");
+    
+    if (!resposta.ok) {
+      throw new Error("Ocorreu um erro ao tentar buscar as informações da API");
+      
+    } else {
+      const dados = await resposta.json();
 
-  numero.innerText = dados.slip.id;
-  conselho.innerText = dados.slip.advice;
+      numero.innerText = dados.slip.id;
+      conselho.innerText = dados.slip.advice;
+    }
+
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 botao.addEventListener("click", pegarConselho);
