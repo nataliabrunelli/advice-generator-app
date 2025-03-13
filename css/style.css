@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+:root {
+  --primary-01: hsl(193, 38%, 86%);
+  --primary-02: hsl(150, 100%, 66%);
+
+  --neutral-01: hsl(217, 19%, 38%);
+  --neutral-02: hsl(217, 19%, 24%);
+  --neutral-03: hsl(218, 23%, 16%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+}
+
+body {
+  height: 100vh;
+  background-color: var(--neutral-03);
+  font-family: "Manrope", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 60%;
+  background-color: var(--neutral-02);
+  padding: 3rem 3rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  border-radius: 1rem;
+  position: relative;
+  margin-bottom: 1.875rem;
+}
+
+.container h1 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--primary-02);
+}
+
+.container q {
+  font-size: 1.75rem;
+  font-weight: 800;
+  text-align: center;
+  color: var(--primary-01);
+}
+
+.container button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--primary-02);
+  position: absolute;
+  bottom: -30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.container button:hover {
+  box-shadow: 0 0 1.25rem var(--primary-01);
+}
+
+footer {
+  text-align: center;
+  position: fixed;
+  bottom: 10px;
+  color: var(--neutral-01);
+}
+
+footer a:hover {
+  color: var(--primary-02);
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 90%;
+    gap: 1rem;
+  }
+
+  .container h1 {
+    font-size: 1rem;
+  }
+
+  .container q {
+    font-size: 1.25rem;
+  }
+}
